@@ -7,6 +7,12 @@ Circle::Circle(double r)
       r_(r)
 {}
 
+Circle::Circle(double r, Color color)
+    : Circle(r)
+{
+    color = color;
+}
+
 Circle::Circle(Circle && other) noexcept
     : Shape(std::move(other)),
       r_(std::move(other.r_))
