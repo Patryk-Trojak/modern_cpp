@@ -55,6 +55,13 @@ constexpr int fib(int n)
     }     
 }
 
+template<class DerivedType, class... Arguments>
+    std::shared_ptr<Shape> make_shape(Arguments&&... args)
+{
+    std::shared_ptr<DerivedType> shape (new DerivedType(std::forward<Arguments>(args)...));
+    return shape;
+}
+
 int main()
 {
     constexpr int fib45 = fib(45);
@@ -74,7 +81,6 @@ int main()
 
     auto circle = make_shared<Circle>(2.0);
     auto rect = make_shared<Rectangle>(3.0, 2.0);
-
     shapes.emplace_back(std::move(circle));
     shapes.emplace_back(std::move(rect));
 
