@@ -7,6 +7,11 @@ class Circle final : public Shape
 public:
     Circle(double r);
     Circle(const Circle & other) = default;
+    Circle& operator=(const Circle& other) = default;
+    Circle(Circle && other) noexcept;
+    Circle& operator=(Circle&& other) noexcept;
+    virtual ~Circle() = default;
+
     using Shape::Shape;
 
     double getArea() const noexcept override;

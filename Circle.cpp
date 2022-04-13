@@ -7,6 +7,18 @@ Circle::Circle(double r)
       r_(r)
 {}
 
+Circle::Circle(Circle && other) noexcept
+    : Shape(std::move(other)),
+      r_(std::move(other.r_))
+{}
+
+Circle& Circle::operator=(Circle&& other) noexcept
+{
+    Shape::operator=(std::move(other));
+    r_ = std::move(other.r_);
+    return *this;
+}
+
 double Circle::getArea() const noexcept
 {
     return M_PI * r_ * r_;

@@ -7,6 +7,10 @@ class Rectangle : public Shape
 public:
     Rectangle(double x, double y);
     Rectangle(const Rectangle & other) = default;
+    Rectangle& operator=(const Rectangle& other) = default;
+    Rectangle(Rectangle && other) noexcept;
+    Rectangle& operator=(Rectangle&& other) noexcept;
+    virtual ~Rectangle() = default;
     using Shape::Shape;
 
     double getArea() const noexcept override;

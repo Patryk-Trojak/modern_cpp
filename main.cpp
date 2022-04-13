@@ -72,6 +72,12 @@ int main()
     make_shared<Rectangle>(Color::red),
     make_shared<Square>(Color::red) };
 
+    auto circle = make_shared<Circle>(2.0);
+    auto rect = make_shared<Rectangle>(3.0, 2.0);
+
+    shapes.emplace_back(std::move(circle));
+    shapes.emplace_back(std::move(rect));
+
     printCollectionElements(shapes);
 
     cout << "Areas before sort: " << std::endl;

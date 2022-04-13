@@ -11,6 +11,10 @@ class Shape
 {
 public:
     Shape(Color c);
+    Shape(const Shape & other) = default;
+    Shape& operator=(const Shape& other) = default;
+    Shape(Shape && other) noexcept;
+    Shape& operator=(Shape&& other) noexcept;
     virtual ~Shape() {}
 
     virtual double getArea() const noexcept = 0;

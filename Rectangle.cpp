@@ -7,6 +7,20 @@ Rectangle::Rectangle(double x, double y)
       y_(y)
 {}
 
+Rectangle::Rectangle(Rectangle && other) noexcept
+    : Shape(std::move(other)),
+      x_(std::move(other.x_)),
+      y_(std::move(other.y_))
+{}
+
+Rectangle& Rectangle::operator=(Rectangle&& other) noexcept
+{
+    Shape::operator=(std::move(other));
+    x_ = std::move(other.x_);
+    y_ = std::move(other.y_);
+    return *this;
+}
+
 double Rectangle::getArea() const noexcept
 {
     return x_ * y_;
