@@ -105,7 +105,6 @@ int main()
         return (s->getArea() < 10);
             return false;
     };
-
     findFirstShapeMatchingPredicate(shapes, perimeterBiggerThan20, "perimeter bigger than 20");
     findFirstShapeMatchingPredicate(shapes, areaLessThanX, "area less than 10");
 

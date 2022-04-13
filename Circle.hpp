@@ -13,7 +13,8 @@ public:
     double getPerimeter() const override;
     double getRadius() const;
     void print() const override;
-
+    [[deprecated("Use other function instead")]] double getPi();
+    
 private:
     Circle() = delete; // doesn't allow to call default constructor
 

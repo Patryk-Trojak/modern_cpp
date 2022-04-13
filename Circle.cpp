@@ -7,8 +7,6 @@ Circle::Circle(double r)
       r_(r)
 {}
 
-
-
 double Circle::getArea() const
 {
     return M_PI * r_ * r_;
@@ -29,4 +27,9 @@ void Circle::print() const
     std::cout << "Circle: radius: " << getRadius() << std::endl
               << "          area: " << getArea() << std::endl
               << "     perimeter: " << getPerimeter() << std::endl;
+}
+
+double Circle::getPi()
+{
+    return 3.14;
 }
