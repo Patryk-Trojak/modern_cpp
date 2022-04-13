@@ -7,6 +7,7 @@ class Circle final : public Shape
 public:
     Circle(double r);
     Circle(const Circle & other) = default;
+    using Shape::Shape;
 
     double getArea() const override;
     double getPerimeter() const override;
@@ -16,5 +17,5 @@ public:
 private:
     Circle() = delete; // doesn't allow to call default constructor
 
-    double r_;
+    double r_{0};
 };

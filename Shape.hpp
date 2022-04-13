@@ -10,11 +10,12 @@ enum class Color : unsigned char
 class Shape
 {
 public:
+    Shape(Color c);
     virtual ~Shape() {}
 
     virtual double getArea() const = 0;
     virtual double getPerimeter() const = 0;
     virtual void print() const;
 
-    Color color;
+    Color color{Color::blue};
 };

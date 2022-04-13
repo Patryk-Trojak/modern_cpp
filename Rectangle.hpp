@@ -7,6 +7,7 @@ class Rectangle : public Shape
 public:
     Rectangle(double x, double y);
     Rectangle(const Rectangle & other) = default;
+    using Shape::Shape;
 
     double getArea() const override;
     double getPerimeter() const override;
@@ -17,6 +18,6 @@ public:
 private:
     Rectangle() = delete;
 
-    double x_;
-    double y_;
+    double x_{0};
+    double y_{0};
 };

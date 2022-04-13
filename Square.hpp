@@ -7,7 +7,7 @@ class Square : public Rectangle
 public:
     Square(double x);
     Square(const Square & other) = default;
-
+    using Rectangle::Rectangle;
     double getArea() const override;
     double getPerimeter() const override;
     void print() const override;

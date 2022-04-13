@@ -3,8 +3,11 @@
 #include <iostream>
 
 Circle::Circle(double r)
-    : r_(r)
+    : Shape(Color::blue),
+      r_(r)
 {}
+
+
 
 double Circle::getArea() const
 {
