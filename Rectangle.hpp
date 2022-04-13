@@ -9,8 +9,8 @@ public:
     Rectangle(const Rectangle & other) = default;
     using Shape::Shape;
 
-    double getArea() const override;
-    double getPerimeter() const override;
+    double getArea() const noexcept override;
+    double getPerimeter() const noexcept override;
     virtual double getX() const final;
     double getY() const;
     void print() const override;
